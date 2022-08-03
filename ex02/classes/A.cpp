@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   A.cpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrajaobe <rrajaobe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/03 20:54:02 by rrajaobe          #+#    #+#             */
-/*   Updated: 2022/08/03 20:54:04 by rrajaobe         ###   ########.fr       */
+/*   Created: 2022/08/03 20:59:13 by rrajaobe          #+#    #+#             */
+/*   Updated: 2022/08/03 21:18:50 by rrajaobe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "../includes/A.hpp"
 
-struct Data{
-	int	a;
-	float	b;
-	char	c;
-};
-
-uintptr_t serialize(Data* ptr){
-	return reinterpret_cast<uintptr_t>(ptr);}
-
-Data* deserialize(uintptr_t raw){
-	return reinterpret_cast<Data *>(raw);}
-
-int main()
+A::A(void)
 {
-	Data data;
+	std::cout << "Constructor of A called" << std::endl;
+}
 
-	std::cout << &data << std::endl;
-	std::cout << serialize(&data) << std::endl;
-	std::cout << deserialize(serialize(&data)) << std::endl;
-	return 0;
+A::~A(void)
+{
+	std::cout << "Destructor of A called" << std::endl;
+}
+
+A::A(const A &copy)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	*this = copy;
+}
+
+A	&A::operator = (const A &copy)
+{
+	std::cout << "Assignation operator called" << std::endl;
+	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: rrajaobe <rrajaobe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 02:14:44 by rrajaobe          #+#    #+#             */
-/*   Updated: 2022/08/01 11:48:38 by rrajaobe         ###   ########.fr       */
+/*   Updated: 2022/08/01 23:17:18 by rrajaobe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <iomanip>
 #include <stdlib.h>
 #include <string>
+#include <string.h>
+#include <cctype>
 
 
 class conversion
@@ -37,7 +39,7 @@ class conversion
 		conversion(const conversion &copy);
 
 		void	check_arg();
-		void	setType();
+		//void	setType();
 		void	printer();
 		
 		void	setFloat();
@@ -48,6 +50,9 @@ class conversion
 		void	decimal_edge_case(char label);
 
 		conversion	&operator = (const conversion &copy);
+
 };
+
+static bool isNumber(const std::string& s);
 
 #endif
