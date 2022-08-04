@@ -6,41 +6,50 @@
 /*   By: rrajaobe <rrajaobe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 02:13:45 by rrajaobe          #+#    #+#             */
-/*   Updated: 2022/08/01 12:36:25 by rrajaobe         ###   ########.fr       */
+/*   Updated: 2022/08/04 23:36:13 by rrajaobe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/conversion.hpp"
 
-/*problem bei check_arg, will never go to char*/
-
 int main(int argc, char **argv)
 {
-    std::string arg;
-    // char *cstr = new char[arg.length() + 1];
-    
-    // std::getline(std::cin, arg);
-    // std::cin.clear();
-    // std::strcpy(cstr, arg.c_str());
     if (argc != 2)
     {
-        std::cout << "Incorrect number of inputs!";
-        return (0);
+		std::cerr << "Invalid argument!";
+		exit(EXIT_FAILURE);
     }
-    arg = argv[1];  
-    // char *cstr = new char[arg.length() + 1];
-    // std::strcpy(cstr, arg.c_str());
+    
+    std::string arg = argv[1];
     
     conversion input(arg);
     input.check_arg();
-
-
-
-     
-    // a.setInt();
-    // a.setFloat();
-    // a.setDouble();
-    // a.setChar();
      
     return (0);
 }
+
+/* TESTS
+	char: 
+		a                           ok 
+		A                           ok
+		digit                       ok
+
+    float:
+        -42.42f                     ok(*)
+        -0                          ok                 
+        --24.24f                    ok
+        - 100.00                    ok(d)
+    double:
+        -42.42                    ok(*)
+        -0                          ok
+        --42.42                   ok
+        - 100.00                    ok(d)
+    int:
+        -digit                      ok
+        -42                         ok(*)
+        -0                          ok      
+        --42                        ok
+        - 100.00                    ok(d)
+    
+
+*/

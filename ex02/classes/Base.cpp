@@ -6,7 +6,7 @@
 /*   By: rrajaobe <rrajaobe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 20:59:26 by rrajaobe          #+#    #+#             */
-/*   Updated: 2022/08/03 23:00:11 by rrajaobe         ###   ########.fr       */
+/*   Updated: 2022/08/04 23:32:59 by rrajaobe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,14 @@ Base 	*Base::generate()
 void	Base::identify(Base *p)
 {
 	std::cout << "The actual type is: " ;
-	std::cout << p->_i <<std::endl;
-	switch (this->_i)
+	switch (p->_i)
 	{
 		case(1):
 			std::cout << "A" << std::endl;
+			break;
 		case(2):
 			std::cout << "B" << std::endl;
+			break;
 		case(3):
 			std::cout << "C" << std::endl;
 	}
@@ -85,13 +86,14 @@ void	Base::identify(Base *p)
 void	Base::identify(Base &p)
 {
 	std::cout << "The actual type is: " ;
-	std::cout << p._i <<std::endl;
-	switch (this->_i)
+	switch (p._i)
 	{
 		case(1):
 			std::cout << "A" << std::endl;
+			break;
 		case(2):
 			std::cout << "B" << std::endl;
+			break;
 		case(3):
 			std::cout << "C" << std::endl;
 	}

@@ -6,7 +6,7 @@
 /*   By: rrajaobe <rrajaobe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 02:14:44 by rrajaobe          #+#    #+#             */
-/*   Updated: 2022/08/01 23:17:18 by rrajaobe         ###   ########.fr       */
+/*   Updated: 2022/08/04 05:32:50 by rrajaobe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,5 @@ class conversion
 		conversion	&operator = (const conversion &copy);
 
 };
-
-static bool isNumber(const std::string& s);
 
 #endif

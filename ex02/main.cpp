@@ -6,7 +6,7 @@
 /*   By: rrajaobe <rrajaobe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 21:00:14 by rrajaobe          #+#    #+#             */
-/*   Updated: 2022/08/03 23:02:18 by rrajaobe         ###   ########.fr       */
+/*   Updated: 2022/08/04 23:33:58 by rrajaobe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ and deleting the obj through a pointer of Base class -> undefined behaviour ;
 */
 int main()
 {
-	Base *base;
-	
-	base = base->generate();
+	Base *base = new Base();
+	(*base).generate();
 
-	//base->identify(base);
-	//base->identify(&base);
+	(*base).identify(base);
+	std::cout << "---------------------------" << std::endl;
+	(*base).identify(*base);
 
 
 	delete base;

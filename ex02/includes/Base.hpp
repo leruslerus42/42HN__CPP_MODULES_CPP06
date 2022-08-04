@@ -6,7 +6,7 @@
 /*   By: rrajaobe <rrajaobe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 20:59:52 by rrajaobe          #+#    #+#             */
-/*   Updated: 2022/08/03 22:55:38 by rrajaobe         ###   ########.fr       */
+/*   Updated: 2022/08/04 09:11:56 by rrajaobe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Base
 {
 	private:
 		int _i;
-
 	public:
 		Base(void);
 		virtual ~Base(void);
